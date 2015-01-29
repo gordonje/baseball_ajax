@@ -1,7 +1,6 @@
 var playerData;
 
 $(document).ready(function() {
-    console.log("Hello world.");
     getData();
 });
 
@@ -13,13 +12,13 @@ function getData() {
 };
 
 function drawStuff() {
-	$(".chart").html(playerData.name);
+	
+	lastSeasonHomeRuns = playerData.stats[playerData.stats.length -1].HR
+	lastSeasonYear = playerData.stats[playerData.stats.length -1].year
+	lastSeasonTeam = playerData.stats[playerData.stats.length -1].club	
 
-	$.each(playerData.stats, function(i, item)
-		{
-			$(".chart").append("<p>" + item.AVG + '</p>');
-		})
+	$(".chart").append("<h1>" + playerData.name + '</h1>');
+	$(".chart").append("<h3>" + playerData.club + '</h3>');
+	$(".chart").append("<p>In "+lastSeasonYear+", "+playerData.name+" hit "+lastSeasonHomeRuns+" home runs for the "+lastSeasonTeam+".");
+
 };
-
-
-
