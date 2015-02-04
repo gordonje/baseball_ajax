@@ -12,10 +12,12 @@ function getData() {
 };
 
 function drawStuff() {
+
+	lastSeason = playerData.stats.length - 1
 	
-	lastSeasonHomeRuns = playerData.stats[playerData.stats.length -1].HR
-	lastSeasonYear = playerData.stats[playerData.stats.length -1].year
-	lastSeasonTeam = playerData.stats[playerData.stats.length -1].club	
+	lastSeasonHomeRuns = playerData.stats[lastSeason].HR
+	lastSeasonYear = playerData.stats[lastSeason].year
+	lastSeasonTeam = playerData.stats[lastSeason].club	
 
 	$(".chart").append("<h1>" + playerData.name + '</h1>');
 	$(".chart").append("<h3>" + playerData.club + '</h3>');
